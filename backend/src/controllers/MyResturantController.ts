@@ -5,9 +5,9 @@ import mongoose from "mongoose";
 
 const createMyResturant = async (req: Request, res: Response) => {
   try {
-    const existingResturant = await Resturant.findOne({ user: req.userId });
+    const existingRestaurant = await Resturant.findOne({ user: req.userId });
 
-    if (existingResturant) {
+    if (existingRestaurant) {
       return res.status(409).json({ message: "You already have a resturant" });
     }
 
