@@ -3,7 +3,15 @@ import { Button } from "./ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const MobileNavLinks = () => {
-  const { logout } = useAuth0();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const { logout, isAuthenticated } = useAuth0();
+
+  const handleLogout = () => {
+    logout({
+      logoutParams: { returnTo: API_BASE_URL },
+    });
+  };
+
   return (
     <>
       <Link
@@ -13,12 +21,14 @@ const MobileNavLinks = () => {
         User Profile
       </Link>
 
-      <Button
-        onClick={() => logout()}
-        className="flex items-center px-3 font-bold hover:bg-gray-500"
-      >
-        Log Out
-      </Button>
+      {isAuthenticated && (
+        <Button
+          onClick={handleLogout}
+          className="flex items-center px-3 font-bold hover:bg-gray-500"
+        >
+          Log Out
+        </Button>
+      )}
     </>
   );
 };
