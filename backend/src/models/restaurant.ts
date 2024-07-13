@@ -5,7 +5,7 @@ const menuItemSchema = new mongoose.Schema({
   price: { type: Number, required: true },
 });
 
-const resturantSchema = new mongoose.Schema({
+const restaurantSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   restaurantName: { type: String, required: true },
   city: { type: String, required: true },
@@ -18,5 +18,5 @@ const resturantSchema = new mongoose.Schema({
   lastUpdated: { type: Date, required: true },
 });
 
-const Resturant = mongoose.model("Resturant", resturantSchema);
-export default Resturant;
+const Restaurant = mongoose.model("Restaurant", restaurantSchema);
+export default Restaurant;
