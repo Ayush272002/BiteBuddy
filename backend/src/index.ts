@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import myUserRoute from "./routes/MyUserRoute";
 import { v2 as cloudinary } from "cloudinary";
 import myRestaurantRoute from "./routes/MyRestaurantRoute";
-import restaurantRoute from "./routes/ResturantRoute";
+import restaurantRoute from "./routes/RestaurantRoute";
 
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
