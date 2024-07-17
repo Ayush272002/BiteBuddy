@@ -25,7 +25,7 @@ type CheckoutSessionRequest = {
 const stripeWebhookHandler = async (req: Request, res: Response) => {
   let event;
   try {
-    const sig = req.headers["stripe-signature"] as string;
+    const sig = req.headers["stripe-signature"];
     event = STRIPE.webhooks.constructEvent(
       req.body,
       sig as string,
@@ -40,7 +40,7 @@ const stripeWebhookHandler = async (req: Request, res: Response) => {
     const order = await Order.findById(event.data.object.metadata?.orderId);
 
     if (!order) {
-      return res.status(400).json({ message: "Order not found" });
+      return res.status(404).json({ message: "Order not found" });
     }
 
     order.totalAmount = event.data.object.amount_total;
@@ -111,7 +111,7 @@ const createLineItems = (
     );
 
     if (!menuItem) {
-      throw new Error("Menu item not found: ${cartItem.menuItemId}");
+      throw new Error(`Menu item not found: ${cartItem.menuItemId}`);
     }
 
     const line_item: Stripe.Checkout.SessionCreateParams.LineItem = {
