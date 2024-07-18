@@ -79,4 +79,12 @@ cd frontend
 npm i
 npm run dev
 ```
-----
+
+---
+
+### Test Credentials
+
+Email - testuser@test.com<br>
+Password - Test@123
+
+**Note** - The server might take a bit longer to startup as its deployed on free tier please wait for around 5-6 min so the backend could startup and process incoming requests.
