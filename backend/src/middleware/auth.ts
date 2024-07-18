@@ -3,8 +3,8 @@ import { auth } from "express-oauth2-jwt-bearer";
 import jwt from "jsonwebtoken";
 import User from "../models/user";
 
-declare global { 
-  namespace Express{
+declare global {
+  namespace Express {
     interface Request {
       auth0Id: string;
       userId: string;

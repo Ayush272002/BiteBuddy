@@ -132,7 +132,7 @@ export const useUpdateMyRestaurantOrder = () => {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({status : updateStatusOrderRequest.status}),
+        body: JSON.stringify({ status: updateStatusOrderRequest.status }),
       }
     );
 
@@ -155,7 +155,7 @@ export const useUpdateMyRestaurantOrder = () => {
     toast.success("Order status updated successfully");
   }
 
-  if(isError) {
+  if (isError) {
     toast.error("Failed to update order status");
     reset();
   }

@@ -1,5 +1,3 @@
-import { count } from "console";
-import e from "express";
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
