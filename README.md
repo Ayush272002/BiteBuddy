@@ -45,7 +45,7 @@
   - Nodemon (`nodemon`): Utility that restarts the server automatically on file changes during development.
   - Concurrently (`concurrently`): Utility for running multiple commands concurrently.
 
-# Running The Backend
+## Running The Backend
 
 In the .env file fill following fields which are mentioned over there
 
@@ -65,7 +65,7 @@ npm run dev
 
 ---
 
-# Running The Frontend
+## Running The Frontend
 
 In the .env file fill the empty fields if you are running the project locally then the
 `VITE_API_BASE_URL` is the url of the backend i.e.,http://localhost:7000
@@ -80,11 +80,19 @@ npm i
 npm run dev
 ```
 
----
-
-### Test Credentials
+## Test Credentials
 
 Email - testuser@test.com<br>
 Password - Test@123
 
 **Note** - The server might take a bit longer to startup as its deployed on free tier please wait for around 5-6 min so the backend could startup and process incoming requests.
+
+## Contributing
+
+If you have suggestions for new features, bug fixes, or improvements, please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
